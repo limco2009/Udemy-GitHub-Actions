@@ -17,7 +17,7 @@ module storage './.github/workflows/modules/storage.bicep' = {
   }
 }
 
-module appPlanDeploy './modules/servicePlan.bicep' = {
+module appPlanDeploy './.github/workflows/modules/servicePlan.bicep' = {
   name: '$'{namePrefix}-appPlanDeploy'
   params: {
     namePrefix: namePrefix
