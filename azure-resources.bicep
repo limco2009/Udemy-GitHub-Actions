@@ -1,7 +1,7 @@
 param location string = 'southeastasia'
 param storageName string = 'mygithubactionsstorage'
 
-param namePrefix string = 'mywebapp'
+// param namePrefix string = 'mywebapp'
 
 param dockerImage string = 'ubuntu/nginx:latest'
 
