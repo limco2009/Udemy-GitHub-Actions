@@ -28,8 +28,7 @@ jobs:
       # Deploys the Bicep Script
       - name: Deploy Bicep Script
         uses: azure/arm-deploy@v1
-        with: 
-          # scope must be provided: resourceGroup, subscription, managementGroup, or tenant
+        with:
           # scope: resourceGroup
           resourceGroupName: GitHubActions
           template: azure-resources.bicep
