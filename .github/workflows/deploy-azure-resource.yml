@@ -30,7 +30,7 @@ jobs:
         uses: azure/arm-deploy@v1
         with: 
           # scope must be provided: resourceGroup, subscription, managementGroup, or tenant
-          scope: resourceGroup
+          # scope: resourceGroup
           resourceGroupName: GitHubActions
           template: azure-resources.bicep
           parameters: |
