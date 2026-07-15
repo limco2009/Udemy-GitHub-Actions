@@ -1,0 +1,37 @@
+# This is a basic workflow to help you get started with GitHub Actions
+
+name: Azure Bicep Deployment
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the main branch
+  push:
+    branches:
+      - main
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v3
+      - name: Echo Script
+        run: echo "Starting Bicep...."
+      
+      # Runs a set of commands using the runners shell
+      - name: Login to Azure
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      # Deploys the Bicep Script
+      - name: Deploy Bicep Script
+        uses: azure/arm-deploy@v1
+        with: 
+          # scope must be provided: resourceGroup, subscription, managementGroup, or tenant
+          scope: resourceGroup
+          resourceGroupName: GitHubActions
+          template: azure-resources.bicep
+          parameters: |
+            location=southeastasia
