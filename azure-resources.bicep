@@ -3,7 +3,7 @@ param storageName string = 'mygithubactionsstorage'
 
 // param namePrefix string = 'mywebapp'
 
-param dockerImage string = 'ubuntu/nginx:latest'
+// param dockerImage string = 'ubuntu/nginx:latest'
 
 targetScope = 'resourceGroup'
 
