@@ -65,7 +65,7 @@ module deployWebsite '.github/workflows/modules/webApp.bicep' = {
   }
 }
 
-output siteUrl string = 'https://${deployWebsite.outputs.webAppName}.azurewebsites.net'
+output siteUrl string = deployWebsite.outputs.siteUrl
 
 
 
