@@ -3,7 +3,8 @@
 @description('StorageName must be between 5 and 24 characters long.')
 param storageName string
 
-param location string = resourceGroup().location
+// param location string = resourceGroup().location
+param location string = 'southeastasia'
 
 resource storageAccount 'Microsoft.Storage/storageAccounts@2021-09-01' = {
   name: storageName
@@ -11,6 +12,9 @@ resource storageAccount 'Microsoft.Storage/storageAccounts@2021-09-01' = {
   kind: 'StorageV2'
   sku: {
     name: 'Standard_LRS'
+  }
+  properties: {
+    accessTier: 'Cool'
   }
 }
 
