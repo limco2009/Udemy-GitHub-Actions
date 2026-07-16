@@ -39,14 +39,14 @@ targetScope = 'resourceGroup'
 //   }
 // }
 
-module storage 'modules/storage.bicep' = {
+module storage '.github/workflows/modules/storage.bicep' = {
   name: storageName
   params: {
     storageName: storageName
     location: location
   }
 }
-module appPlanDeploy 'modules/servicePlan.bicep' = {
+module appPlanDeploy '.github/workflows/modules/servicePlan.bicep' = {
   name: '${namePrefix}-appPlanDeploy'
   params: {
     namePrefix: namePrefix
@@ -54,7 +54,7 @@ module appPlanDeploy 'modules/servicePlan.bicep' = {
   }
 }
 
-module deployWebsite 'modules/webApp.bicep' = {
+module deployWebsite '.github/workflows/modules/webApp.bicep' = {
   name: '${namePrefix}-deploy-website'
   params: {
     location: location
