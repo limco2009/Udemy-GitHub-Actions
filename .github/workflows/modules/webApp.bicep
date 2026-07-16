@@ -10,9 +10,7 @@ param dockerImageTag string = 'latest'
 resource webApplication 'Microsoft.Web/sites@2021-02-01' = {
   name: '${namePrefix}-site'
   location: location
-
-  // kind: 'app,linux'
-
+  kind: 'app,linux'
   properties: {
     serverFarmId: appPlanId
     siteConfig: {
@@ -35,6 +33,7 @@ resource webApplication 'Microsoft.Web/sites@2021-02-01' = {
         }     
       ]
       // linuxFxVersion: 'DOCKER|${dockerImage}:${dockerImageTag}'
+      linuxFxVersion: 'DOCKER|${dockerImage}:${dockerImageTag}'
     }
   }
 }
