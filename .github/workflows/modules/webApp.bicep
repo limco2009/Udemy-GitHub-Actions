@@ -34,7 +34,7 @@ resource webApplication 'Microsoft.Web/sites@2021-02-01' = {
           value: 'false'
         }     
       ]
-      linuxFxVersion: 'DOCKER|${dockerImage}:${dockerImageTag}'
+      // linuxFxVersion: 'DOCKER|${dockerImage}:${dockerImageTag}'
     }
   }
 }
