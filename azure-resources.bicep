@@ -59,7 +59,7 @@ module deployWebsite '.github/workflows/modules/webApp.bicep' = {
   params: {
     location: location
     // namePrefix: namePrefix
-    appPlanId: appPlanDeploy.outputs.appPlanId
+    appPlanId: appPlanDeploy.outputs.PlanId
     dockerImage: dockerImage
     dockerImageTag: dockerImageTag
   }
